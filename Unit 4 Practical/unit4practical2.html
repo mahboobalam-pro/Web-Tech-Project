@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<style>
+body {
+  font-family: Arial;
+  background: #f4f6f9;
+  animation: fadeIn 1s;
+}
+.box {
+  width: 50%;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+p {
+  transition: all 0.5s ease;
+}
+button {
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+button:hover {
+  background: #1e7e34;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<p id="text">This text can be shown or hidden</p>
+<button onclick="toggleText()">Toggle Text</button>
+
+<hr>
+<p><b>Name:</b> Mahboob Alam | <b>ERP:</b> 10765</p>
+</div>
+
+<script>
+function toggleText() {
+  document.getElementById("text").classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>

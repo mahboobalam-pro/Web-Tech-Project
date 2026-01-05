@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<title>Create & Remove Elements</title>
+<style>
+body {
+  font-family: Arial;
+  background: #eef2f3;
+}
+.container {
+  width: 50%;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+li {
+  padding: 8px;
+  margin: 5px 0;
+  background: #d1ecf1;
+  border-radius: 5px;
+  animation: slideIn 0.4s ease;
+}
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #17a2b8;
+  color: white;
+}
+@keyframes slideIn {
+  from {opacity:0; transform: translateX(-20px);}
+  to {opacity:1; transform: translateX(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h3>Dynamic List</h3>
+<ul id="list">
+  <li>Item 1</li>
+</ul>
+
+<button onclick="addItem()">Add Item</button>
+<button onclick="removeItem()">Remove Item</button>
+
+<hr>
+<p><b>Name:</b> Mahboob Alam | <b>ERP:</b> 10765</p>
+</div>
+
+<script>
+function addItem() {
+  let li = document.createElement("li");
+  li.textContent = "New Item Added";
+  document.getElementById("list").appendChild(li);
+}
+
+function removeItem() {
+  let list = document.getElementById("list");
+  if (list.lastChild) {
+    list.lastChild.remove();
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<title>DOM Manipulation</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #e0f7fa, #ffffff);
+  animation: fadeIn 1.2s ease;
+}
+.container {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2 id="title">DOM Example</h2>
+<p class="info">Original Paragraph</p>
+
+<button onclick="changeContent()">Change Content</button>
+
+<hr>
+<p><b>Name:</b> Mahboob Alam | <b>ERP:</b> 10765</p>
+</div>
+
+<script>
+function changeContent() {
+  document.getElementById("title").innerHTML = "Title Changed Successfully!";
+  document.querySelector(".info").innerHTML = "Paragraph updated using querySelector()";
+}
+</script>
+
+</body>
+</html>

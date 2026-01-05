@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<title>Canvas Drawing</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #d9afd9, #97d9e1);
+  animation: fadeIn 1.2s ease;
+}
+
+.container {
+  width: 70%;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+canvas {
+  border: 3px solid #333;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+canvas:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Canvas Drawing Example</h2>
+  <p>Drawing shapes using HTML5 Canvas</p>
+
+  <canvas id="myCanvas" width="500" height="300"></canvas>
+
+  <hr>
+  <p><b>Name:</b> Manish Kumar | <b>ERP:</b> 10773</p>
+</div>
+
+<script>
+let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+
+/* Rectangle */
+ctx.fillStyle = "#4CAF50";
+ctx.fillRect(30, 30, 150, 80);
+
+/* Circle */
+ctx.beginPath();
+ctx.arc(300, 80, 40, 0, Math.PI * 2);
+ctx.fillStyle = "#FF5733";
+ctx.fill();
+
+/* Line */
+ctx.beginPath();
+ctx.moveTo(50, 200);
+ctx.lineTo(450, 200);
+ctx.strokeStyle = "#0000FF";
+ctx.lineWidth = 4;
+ctx.stroke();
+
+/* Text */
+ctx.font = "18px Arial";
+ctx.fillStyle = "#000";
+ctx.fillText("HTML5 Canvas Drawing", 150, 260);
+</script>
+
+</body>
+</html>

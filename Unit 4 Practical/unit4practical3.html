@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<title>Event Listeners</title>
+<style>
+body {
+  font-family: Arial;
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+}
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#add { background: #007bff; color: white; }
+#remove { background: #dc3545; color: white; }
+button:hover { transform: scale(1.1); }
+</style>
+</head>
+<body>
+
+<div class="container">
+<button id="add">Click Me</button>
+<button id="remove">Remove Event</button>
+
+<p><b>Name:</b> Mahboob Alam | <b>ERP:</b> 10765</p>
+</div>
+
+<script>
+function alertMsg() {
+  alert("Event Listener Activated!");
+}
+
+document.getElementById("add").addEventListener("click", alertMsg);
+
+document.getElementById("remove").addEventListener("click", function() {
+  document.getElementById("add").removeEventListener("click", alertMsg);
+  alert("Event Removed");
+});
+</script>
+
+</body>
+</html>
